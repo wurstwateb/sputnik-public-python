@@ -4,9 +4,15 @@
 
 A local, privacy-friendly Jackbox answer moderator powered by Selenium.
 
+Developed by the [Union of Jackboxers community](https://t.me/JackboxTiktok).
+
 ---
 
 ## Русский
+
+Проект разрабатывается сообществом
+[«Союз джекбоксеров»](https://t.me/JackboxTiktok). Присоединяйтесь к каналу,
+чтобы следить за обновлениями и общаться с сообществом.
 
 ### Возможности
 
@@ -62,6 +68,10 @@ Selenium Manager делает это автоматически.
 ---
 
 ## English
+
+This project is developed by the
+[Union of Jackboxers community](https://t.me/JackboxTiktok). Join the channel
+for updates and community discussion.
 
 ### Features
 

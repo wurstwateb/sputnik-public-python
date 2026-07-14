@@ -12,6 +12,7 @@ import sys
 import threading
 import time
 import unicodedata
+import webbrowser
 from dataclasses import asdict, dataclass
 from pathlib import Path
 from tkinter import BOTH, END, LEFT, RIGHT, X, BooleanVar, StringVar, Text, Tk
@@ -28,6 +29,7 @@ from selenium.webdriver.common.by import By
 
 APP_NAME = "Sputnik Public"
 APP_VERSION = "1.0.0"
+COMMUNITY_URL = "https://t.me/JackboxTiktok"
 
 
 def app_dir() -> Path:
@@ -286,6 +288,7 @@ class App:
             style.theme_use("vista")
         style.configure("Title.TLabel", font=("Segoe UI Semibold", 20))
         style.configure("Status.TLabel", font=("Segoe UI Semibold", 10))
+        style.configure("Community.TLabel", foreground="#2468b4", font=("Segoe UI", 9, "underline"))
         style.configure("TButton", padding=(12, 8))
 
         shell = ttk.Frame(self.root, padding=18)
@@ -295,6 +298,15 @@ class App:
         header.pack(fill=X, pady=(0, 12))
         ttk.Label(header, text="Sputnik Public", style="Title.TLabel").pack(side=LEFT)
         ttk.Label(header, textvariable=self.status_text, style="Status.TLabel").pack(side=RIGHT)
+
+        community = ttk.Label(
+            shell,
+            text="Разрабатывается сообществом «Союз джекбоксеров»",
+            style="Community.TLabel",
+            cursor="hand2",
+        )
+        community.pack(anchor="w", pady=(0, 10))
+        community.bind("<Button-1>", lambda _event: webbrowser.open(COMMUNITY_URL))
 
         settings = ttk.LabelFrame(shell, text="Настройки", padding=12)
         settings.pack(fill=X, pady=(0, 10))
